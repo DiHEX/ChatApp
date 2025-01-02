@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link href="/main.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.6.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stomp/stompjs@7.0.0/bundles/stomp.umd.min.js"></script>
+    <script src="/app.js"></script>
+</head>
+<body>
+<div id="main-content" class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Chat Rooms</h3>
+                </div>
+                <div class="panel-body">
+                    <div class="form-group">
+                        <input type="text" id="roomName" class="form-control" placeholder="New room name...">
+                        <button id="createRoom" class="btn btn-primary mt-2">Create Room</button>
+                        <button id="go-to-room" class="btn btn-default" onclick="window.location.href='index.html';">Back to all chat</button>
+                    </div>
+                    <ul id="roomList" class="list-group">
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-8">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Chat: <span id="currentRoom">No room selected</span></h3>
+                </div>
+                <div class="panel-body">
+                    <div id="messageArea" style="height: 300px; overflow-y: scroll;">
+                        <table id="conversation" class="table">
+                            <tbody id="messages"></tbody>
+                        </table>
+                    </div>
+                    <form id="messageForm" class="form-inline" style="margin-top: 20px;">
+                        <input type="text" id="user" class="form-control" placeholder="Your name" style="width: 30%;">
+                        <input type="text" id="message" class="form-control" placeholder="Your message" style="width: 50%;">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
